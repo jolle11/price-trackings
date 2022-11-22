@@ -21,10 +21,12 @@ async function takeScreenshot(url) {
 	const price = web("span.baseprice").text();
 	const webPrice = Array.from(price);
 
-	webPrice.unshift(moment().format("DD-MM-YYYY - "));
+	if (webPrice.length) {
+		webPrice.unshift(moment().format("DD-MM-YYYY - ")); // Add date
+		const result = webPrice.join("");
+		console.log(result);
+	}
 
-	const result = webPrice.join("");
-	console.log(result);
 	await driver.close();
 }
 

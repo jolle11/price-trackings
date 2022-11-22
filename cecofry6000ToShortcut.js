@@ -21,11 +21,13 @@ async function takeScreenshot(url) {
 	const price = web("h3.css-bxi7sc").text();
 	const webPrice = Array.from(price);
 
-	webPrice.splice(webPrice.length - 2, 2);
-	webPrice.unshift(moment().format("DD-MM-YYYY - "));
+	if (webPrice.length) {
+		webPrice.splice(webPrice.length - 2, 2);
+		webPrice.unshift(moment().format("DD-MM-YYYY - "));
+		const result = webPrice.join("");
+		console.log(result);
+	}
 
-	const result = webPrice.join("");
-	console.log(result);
 	await driver.close();
 }
 
