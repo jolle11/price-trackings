@@ -6,7 +6,7 @@ require("chromedriver");
 
 const url = "https://www.monstera.es/..."; // URL of the monstera product here
 
-async function takeScreenshot(url) {
+async function getPrice(url) {
 	// Wait for browser to build and launch properly
 	let driver = await new Builder().forBrowser("chrome").build();
 
@@ -51,4 +51,4 @@ async function takeScreenshot(url) {
 	await driver.close();
 }
 
-takeScreenshot(url);
+getPrice(url);

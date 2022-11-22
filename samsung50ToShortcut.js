@@ -7,7 +7,7 @@ require("chromedriver");
 const url =
 	"https://www.pccomponentes.com/samsung-ue50bu8000k-50-led-ultrahd-4k-hdr10";
 
-async function takeScreenshot(url) {
+async function getPrice(url) {
 	// Wait for browser to build and launch properly
 	let driver = await new Builder().forBrowser("chrome").build();
 
@@ -32,4 +32,4 @@ async function takeScreenshot(url) {
 	await driver.close();
 }
 
-takeScreenshot(url);
+getPrice(url);

@@ -6,7 +6,7 @@ require("chromedriver");
 
 const url = "https://bellroy.com/..."; // URL of the bellroy product here
 
-async function takeScreenshot(url) {
+async function getPrice(url) {
 	// Wait for browser to build and launch properly
 	let driver = await new Builder().forBrowser("chrome").build();
 
@@ -33,4 +33,4 @@ async function takeScreenshot(url) {
 	await driver.close();
 }
 
-takeScreenshot(url);
+getPrice(url);
