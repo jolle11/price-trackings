@@ -27,6 +27,8 @@ async function takeScreenshot(url) {
 		webPrice.unshift(moment().format("DD-MM-YYYY - ")); // Add date
 		const result = webPrice.join("");
 		console.log(result);
+	} else {
+		console.log("Something went wrong while getting the price.");
 	}
 
 	await driver.close();
