@@ -18,7 +18,7 @@ async function takeScreenshot(url) {
 	let source = await driver.getPageSource();
 
 	const web = cheerio.load(source);
-	const price = web("span.baserice").text();
+	const price = web("span.baseprice").text();
 	const webPrice = Array.from(price);
 
 	if (webPrice.length) {
